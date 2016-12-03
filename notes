@@ -1,0 +1,46 @@
+Some basic rules:
+
+line numbers can't be more than 256 chars long
+line numbers must be in order
+// not yet - input file must have a .bas extension (check for this on open)
+
+
+
+
+Open a file and parse it first I guess. 
+
+The main thing to do first is parse and run a 'hello world' basic
+program. Then we can move onto the code below from a wikipedia example
+of a simple basic program. 
+
+
+
+code:
+10 INPUT "What is your name: ", U$
+20 PRINT "Hello "; U$
+30 INPUT "How many stars do you want: ", N
+40 S$ = ""
+50 FOR I = 1 TO N
+60 S$ = S$ + "*"
+70 NEXT I
+80 PRINT S$
+90 INPUT "Do you want more stars? ", A$
+100 IF LEN(A$) = 0 THEN GOTO 90
+110 A$ = LEFT$(A$, 1)
+120 IF A$ = "Y" OR A$ = "y" THEN GOTO 30
+130 PRINT "Goodbye "; U$
+140 END
+
+
+result when run:
+
+What is your name: Mike
+Hello Mike
+How many stars do you want: 7
+*******
+Do you want more stars? yes
+How many stars do you want: 3
+***
+Do you want more stars? no
+Goodbye Mike
+	 
